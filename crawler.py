@@ -17,7 +17,7 @@ def import_features(directory):
 
 
 if len(sys.argv) < 3:
-    print 'Usage:   python main.py <dir> <json>'
+    print 'Usage:   python main.py <dir> <features to find seperated by ==$==>'
     print 'Example: python main.py ~/Downloads/features/ some==$==features==$==hello'
 else:
     features = import_features(sys.argv[1])
