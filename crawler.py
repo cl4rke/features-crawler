@@ -17,12 +17,13 @@ def import_features(directory):
 
 
 if len(sys.argv) < 3:
-    print 'Usage:   python main.py <dir> <features to find seperated by ==$==>'
-    print 'Example: python main.py ~/Downloads/features/ some==$==features==$==hello'
+    print 'Usage:   python main.py <dir> \'<features to find seperated by ==$==>\''
+    print 'Example: python main.py ~/Downloads/features/ \'some==$==features==$==hello\''
 else:
     features = import_features(sys.argv[1])
     features_to_find = sys.argv[2]
 
-    for name in features_to_find:
-        print name, features[name]
+    for name in features_to_find.split(r'==$=='):
+        if name in features:
+            print name, features[name]
 
